@@ -10,7 +10,7 @@ public class EventConsumerService {
 
 	private final Logger logger = LogManager.getLogger(EventConsumerService.class);
 
-	@KafkaListener(topics = {"spring-boot-test-topic"}, groupId = "#{T(java.util.UUID).randomUUID().toString()}")
+	@KafkaListener(topics = {"spring-boot-test-topic"}, groupId = "test-message-group")
 	public void consumeContactSupportResponse(String incomingMessage) {
 		logger.info("Message received from event handler '{}'", incomingMessage);
 	}
